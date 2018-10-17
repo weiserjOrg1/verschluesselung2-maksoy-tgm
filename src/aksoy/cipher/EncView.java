@@ -121,4 +121,22 @@ public class EncView extends JFrame {
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
 	}
+
+	public boolean isApplyChange(Object s) {
+		if (s == this.applyChangeB)
+			return true;
+		return false;
+	}
+
+	public boolean isEncrypt(Object s) {
+		if (s == this.encrypt)
+			return true;
+		return false;
+	}
+
+	public boolean isDecrypt(Object s) {
+		if (s == this.decrypt)
+			return true;
+		return false;
+	}
 }
