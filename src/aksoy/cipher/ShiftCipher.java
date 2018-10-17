@@ -18,11 +18,10 @@ public class ShiftCipher extends MonoAlphabeticCipher {
 		if (value >= 0) {
 			newAlph = alph.substring(value);
 			newAlph += alph.substring(0, value);
+			super.setSecretAlphabet(newAlph);
 		} else {
-			for (int i = 29; i > 29 + value; i--) {
-				newAlph += alph.charAt(i);
-			}
-			newAlph = alph.substring(0, 29 + value);
+			newAlph = alph.substring(29 + value);
+			newAlph += alph.substring(0, 29 + value);
 			super.setSecretAlphabet(newAlph);
 		}
 	}

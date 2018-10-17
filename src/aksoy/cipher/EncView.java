@@ -22,6 +22,7 @@ public class EncView extends JFrame {
 	private JPanel inpShiftPanel;
 	private JPanel inpSubstPanel;
 	private JButton applyChangeB;
+	private JButton resetB;
 
 	private JTextField text;
 	private JTextField output;
@@ -76,10 +77,15 @@ public class EncView extends JFrame {
 
 		this.applyChangeB = new JButton("Apply");
 		this.applyChangeB.addActionListener(this.c);
+
+		this.resetB = new JButton("Reset");
+		this.resetB.addActionListener(this.c);
+
 		JPanel applyPanel = new JPanel();
-		applyPanel.setLayout(new GridLayout(1, 3));
+		applyPanel.setLayout(new GridLayout(1, 4));
 		applyPanel.add(new Container());
 		applyPanel.add(this.applyChangeB);
+		applyPanel.add(this.resetB);
 		applyPanel.add(new Container());
 
 		this.changeAlphabetBox.add(this.inpSubstPanel);
@@ -90,7 +96,7 @@ public class EncView extends JFrame {
 		this.inputOutputBox.setBorder(BorderFactory.createTitledBorder("Input & Output"));
 		this.inputOutputBox.setLayout(new GridLayout(4, 1));
 
-		this.text = new JTextField();
+		this.text = new JTextField("");
 		JLabel textLabel = new JLabel("Input: ");
 		JPanel textPanel = new JPanel();
 		textPanel.setLayout(new GridLayout(1, 2));
@@ -122,8 +128,50 @@ public class EncView extends JFrame {
 		this.setVisible(true);
 	}
 
+	public boolean isSubstSelected() {
+		return (this.subCipherR.isSelected()) ? true : false;
+	}
+
+	public boolean isSubst(Object s) {
+		if (s == this.subCipherR)
+			return true;
+		return false;
+	}
+
+	public boolean isShiftSelected() {
+		return (this.shiCipherR.isSelected()) ? true : false;
+	}
+
+	public boolean isShift(Object s) {
+		if (s == this.shiCipherR)
+			return true;
+		return false;
+	}
+
+	public String getSubstInp() {
+		return this.inputSubst.getText();
+	}
+
+	public String getShiftInp() {
+		return this.inputShift.getText();
+	}
+
+	public String getInput() {
+		return this.text.getText();
+	}
+
+	public void setOutput(String output) {
+		this.output.setText(output);
+	}
+
 	public boolean isApplyChange(Object s) {
 		if (s == this.applyChangeB)
+			return true;
+		return false;
+	}
+
+	public boolean isReset(Object s) {
+		if (s == this.resetB)
 			return true;
 		return false;
 	}
@@ -138,5 +186,17 @@ public class EncView extends JFrame {
 		if (s == this.decrypt)
 			return true;
 		return false;
+	}
+
+	public void setChangeLayout(int mode) {
+		if (mode == EncModel.MODE_SUBST) {
+			this.inputSubst.setEditable(true);
+			this.inputShift.setEditable(false);
+			this.m.setMode(EncModel.MODE_SUBST);
+		} else {
+			this.inputSubst.setEditable(false);
+			this.inputShift.setEditable(true);
+			this.m.setMode(EncModel.MODE_SHIFT);
+		}
 	}
 }
