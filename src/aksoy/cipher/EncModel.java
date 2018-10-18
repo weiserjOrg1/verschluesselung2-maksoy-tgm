@@ -1,5 +1,11 @@
 package aksoy.cipher;
 
+/** The Model class contains all cipher methods available
+ * for use. It also changes and resets the alphabets of
+ * each cipher method.
+ * @author Melih Aksoy
+ * @version 18-10-2018
+ */
 import javax.swing.JOptionPane;
 
 public class EncModel {
@@ -43,11 +49,11 @@ public class EncModel {
 	}
 
 	public String encrypt(String input) {
-		return (this.selectedMethod==MODE_SUBST?this.subst.encrypt(input):this.shift.encrypt(input));
+		return (this.selectedMethod == MODE_SUBST ? this.subst.encrypt(input) : this.shift.encrypt(input));
 	}
 
 	public String decrypt(String output) {
-		return (this.selectedMethod==MODE_SUBST?this.subst.decrypt(output):this.shift.decrypt(output));
+		return (this.selectedMethod == MODE_SUBST ? this.subst.decrypt(output) : this.shift.decrypt(output));
 	}
 
 	public int getMode() {

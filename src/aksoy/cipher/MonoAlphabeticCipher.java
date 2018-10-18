@@ -22,9 +22,10 @@ public class MonoAlphabeticCipher implements Cipher {
 	 * This method changes the current secret alphabet to the one defined in the
 	 * parameter, assuming it satisfies all conditions.
 	 * 
-	 * @param secretAlphabet The desired secret alphabet.
-	 * @throws CipherException The Exception that is thrown when an issue is found
-	 *                         in the input.
+	 * @param secretAlphabet
+	 *            The desired secret alphabet.
+	 * @throws CipherException
+	 *             The Exception that is thrown when an issue is found in the input.
 	 */
 	protected void setSecretAlphabet(String secretAlphabet) throws CipherException {
 		if (secretAlphabet.length() != 30) {
@@ -66,7 +67,8 @@ public class MonoAlphabeticCipher implements Cipher {
 	/**
 	 * This method encrypts the specified text using the secret alphabet.
 	 * 
-	 * @param text The text to encrypt.
+	 * @param text
+	 *            The text to encrypt.
 	 * @return The encrypted text.
 	 */
 	public String encrypt(String text) {
@@ -100,7 +102,8 @@ public class MonoAlphabeticCipher implements Cipher {
 	/**
 	 * This method decrypts the specified text using the secret alphabet.
 	 * 
-	 * @param text The text to decrypt.
+	 * @param text
+	 *            The text to decrypt.
 	 * @return The decrypted text.
 	 */
 

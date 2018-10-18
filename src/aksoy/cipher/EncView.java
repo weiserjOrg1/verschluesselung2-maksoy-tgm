@@ -1,5 +1,10 @@
 package aksoy.cipher;
 
+/**
+ * The EncView class contains all visual components of the GUI.
+ * @author Melih Aksoy
+ * @version 18-10-2018
+ */
 import javax.swing.*;
 import java.awt.*;
 
@@ -40,7 +45,9 @@ public class EncView extends JFrame {
 		this.subCipherR = new JRadioButton("Substitution", true);
 		this.shiCipherR = new JRadioButton("Shift Cipher");
 		this.subCipherR.addActionListener(this.c);
+		this.subCipherR.addFocusListener(this.c);
 		this.shiCipherR.addActionListener(this.c);
+		this.shiCipherR.addFocusListener(this.c);
 		this.radioGroup = new ButtonGroup();
 		this.radioGroup.add(this.subCipherR);
 		this.radioGroup.add(this.shiCipherR);
@@ -49,7 +56,7 @@ public class EncView extends JFrame {
 		this.selection.setBorder(BorderFactory.createTitledBorder("Encryption Method"));
 		this.selection.add(this.subCipherR);
 		this.selection.add(this.shiCipherR);
-		this.selection.setMinimumSize(new Dimension(this.getWidth(), 60));
+		this.selection.setMinimumSize(new Dimension(this.getWidth(), 200));
 		this.selection.setMaximumSize(new Dimension(Integer.MAX_VALUE, 60));
 
 		this.changeAlphabetBox = new JPanel();
@@ -128,66 +135,144 @@ public class EncView extends JFrame {
 		this.setVisible(true);
 	}
 
+	/**
+	 * Checks if Substitution is selected.
+	 * 
+	 * @return True if Substitution is selected, false otherwise.
+	 */
 	public boolean isSubstSelected() {
 		return (this.subCipherR.isSelected()) ? true : false;
 	}
 
+	/**
+	 * Checks if the component the user interacted with is the Substitution radio
+	 * button.
+	 * 
+	 * @param s
+	 *            Object taken by ActionEvent
+	 * @return True if s is the Substitution radio button, false otherwise.
+	 */
 	public boolean isSubst(Object s) {
 		if (s == this.subCipherR)
 			return true;
 		return false;
 	}
 
+	/**
+	 * Checks if Shift Cipher is selected.
+	 * 
+	 * @return True if Shift Cipher is selected, false otherwise.
+	 */
 	public boolean isShiftSelected() {
 		return (this.shiCipherR.isSelected()) ? true : false;
 	}
 
+	/**
+	 * Checks if the component the user interacted with is the Shift Cipher radio
+	 * button.
+	 * 
+	 * @param s
+	 *            Object taken by ActionEvent
+	 * @return True if s is the Shift Cipher radio button, false otherwise.
+	 */
 	public boolean isShift(Object s) {
 		if (s == this.shiCipherR)
 			return true;
 		return false;
 	}
 
+	/**
+	 * Returns the input in the Substitution input field.
+	 * 
+	 * @return Input in the Substitution input field.
+	 */
 	public String getSubstInp() {
 		return this.inputSubst.getText();
 	}
 
+	/**
+	 * Returns the input in the Shifting input field.
+	 * 
+	 * @return Input in the Shifting input field.
+	 */
 	public String getShiftInp() {
 		return this.inputShift.getText();
 	}
 
+	/**
+	 * Returns the text to be encrypted.
+	 * 
+	 * @return Text for the encryption.
+	 */
 	public String getInput() {
 		return this.text.getText();
 	}
 
+	/**
+	 * Changes the text for the output field for results.
+	 */
 	public void setOutput(String output) {
 		this.output.setText(output);
 	}
 
+	/**
+	 * Checks if the specified Object s is the button for applying changes.
+	 * 
+	 * @param s
+	 *            Object taken by ActionEvent
+	 * @return True if s is the button for changing the alphabet, false otherwise.
+	 */
 	public boolean isApplyChange(Object s) {
 		if (s == this.applyChangeB)
 			return true;
 		return false;
 	}
 
+	/**
+	 * Checks if the specified Object s is the button for resetting changes.
+	 * 
+	 * @param s
+	 *            Object taken by ActionEvent
+	 * @return True if s is the button for resetting all alphabets, false otherwise.
+	 */
 	public boolean isReset(Object s) {
 		if (s == this.resetB)
 			return true;
 		return false;
 	}
 
+	/**
+	 * Checks if the specified Object s is the button for encrypting input.
+	 * 
+	 * @param s
+	 *            Object taken by ActionEvent
+	 * @return True if s is the button for encrypting, false otherwise.
+	 */
 	public boolean isEncrypt(Object s) {
 		if (s == this.encrypt)
 			return true;
 		return false;
 	}
 
+	/**
+	 * Checks if the specified Object s is the button for decrypting input.
+	 * 
+	 * @param s
+	 *            Object taken by ActionEvent
+	 * @return True if s is the button for decrypting, false otherwise.
+	 */
 	public boolean isDecrypt(Object s) {
 		if (s == this.decrypt)
 			return true;
 		return false;
 	}
 
+	/**
+	 * This method changes the layout to fit the cipher method that was chosen.
+	 * 
+	 * @param mode
+	 *            The current chosen cipher method
+	 */
 	public void setChangeLayout(int mode) {
 		if (mode == EncModel.MODE_SUBST) {
 			this.inputSubst.setEditable(true);

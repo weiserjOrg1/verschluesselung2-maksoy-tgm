@@ -1,5 +1,13 @@
 package aksoy.cipher;
 
+/**
+ * The ShiftCipher class inherits MonoAlphabeticCipher's functionalities and
+ * expands on it by adding the shift cipher.
+ * 
+ * @author Melih Aksoy
+ * @version 18-10-2018
+ *
+ */
 public class ShiftCipher extends MonoAlphabeticCipher {
 	public ShiftCipher() {
 		super();
