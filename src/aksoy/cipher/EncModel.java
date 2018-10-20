@@ -22,6 +22,12 @@ public class EncModel {
 		this.shift = new ShiftCipher();
 	}
 
+	/**
+	 * The method change changes the chosen method of encryption to the one
+	 * specified in the parameter.
+	 * 
+	 * @param input The desired encryption decryption mode.
+	 */
 	public void change(String input) {
 		try {
 			if (this.selectedMethod == MODE_SUBST) {

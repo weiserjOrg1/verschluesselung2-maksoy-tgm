@@ -148,8 +148,7 @@ public class EncView extends JFrame {
 	 * Checks if the component the user interacted with is the Substitution radio
 	 * button.
 	 * 
-	 * @param s
-	 *            Object taken by ActionEvent
+	 * @param s Object taken by ActionEvent
 	 * @return True if s is the Substitution radio button, false otherwise.
 	 */
 	public boolean isSubst(Object s) {
@@ -171,8 +170,7 @@ public class EncView extends JFrame {
 	 * Checks if the component the user interacted with is the Shift Cipher radio
 	 * button.
 	 * 
-	 * @param s
-	 *            Object taken by ActionEvent
+	 * @param s Object taken by ActionEvent
 	 * @return True if s is the Shift Cipher radio button, false otherwise.
 	 */
 	public boolean isShift(Object s) {
@@ -218,8 +216,7 @@ public class EncView extends JFrame {
 	/**
 	 * Checks if the specified Object s is the button for applying changes.
 	 * 
-	 * @param s
-	 *            Object taken by ActionEvent
+	 * @param s Object taken by ActionEvent
 	 * @return True if s is the button for changing the alphabet, false otherwise.
 	 */
 	public boolean isApplyChange(Object s) {
@@ -231,8 +228,7 @@ public class EncView extends JFrame {
 	/**
 	 * Checks if the specified Object s is the button for resetting changes.
 	 * 
-	 * @param s
-	 *            Object taken by ActionEvent
+	 * @param s Object taken by ActionEvent
 	 * @return True if s is the button for resetting all alphabets, false otherwise.
 	 */
 	public boolean isReset(Object s) {
@@ -244,8 +240,7 @@ public class EncView extends JFrame {
 	/**
 	 * Checks if the specified Object s is the button for encrypting input.
 	 * 
-	 * @param s
-	 *            Object taken by ActionEvent
+	 * @param s Object taken by ActionEvent
 	 * @return True if s is the button for encrypting, false otherwise.
 	 */
 	public boolean isEncrypt(Object s) {
@@ -257,8 +252,7 @@ public class EncView extends JFrame {
 	/**
 	 * Checks if the specified Object s is the button for decrypting input.
 	 * 
-	 * @param s
-	 *            Object taken by ActionEvent
+	 * @param s Object taken by ActionEvent
 	 * @return True if s is the button for decrypting, false otherwise.
 	 */
 	public boolean isDecrypt(Object s) {
@@ -270,8 +264,7 @@ public class EncView extends JFrame {
 	/**
 	 * This method changes the layout to fit the cipher method that was chosen.
 	 * 
-	 * @param mode
-	 *            The current chosen cipher method
+	 * @param mode The current chosen cipher method
 	 */
 	public void setChangeLayout(int mode) {
 		if (mode == EncModel.MODE_SUBST) {
